@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ exercise_name }} in Progress</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ exercise_name.replace("_", " ").title() }} in Progress</h1>
+        <p>Press 'ESC' to return to the menu.</p>
+    </div>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                window.location.href = "/back_to_menu";
+            }
+        });
+    </script>
+</body>
+</html>
